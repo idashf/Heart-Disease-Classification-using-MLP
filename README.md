@@ -24,7 +24,6 @@ MLP_HeartDisease_Optimized_RandomizedSearchCV.ipynb
 ---
 
 # Libraries Used  
-*(Source: HW2-report.pdf)* :contentReference[oaicite:0]{index=0}  
 
 ### **• NumPy**
 Matrix operations, numerical computations, random number generation.
