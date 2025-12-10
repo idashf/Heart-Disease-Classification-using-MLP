@@ -23,7 +23,7 @@ MLP_HeartDisease_Optimized_RandomizedSearchCV.ipynb
 
 ---
 
-# 📚 Libraries Used  
+# Libraries Used  
 *(Source: HW2-report.pdf)* :contentReference[oaicite:0]{index=0}  
 
 ### **• NumPy**
@@ -59,96 +59,7 @@ Batch sizes tested:
 1, 16, 32, 64, 128, 242 (full batch)
 
 
-### 📈 **Impact of Batch Size on Convergence Speed & Accuracy**
-
-![Batch Size Impact](images/batch_size_impact.png)
-
-### ✔ Key Findings:
-- **Batch size = 1**  
-  - Fastest convergence, accuracy reaches ~90% early  
-  - Highly unstable → prone to overfitting  
-
-- **Batch size = 16**  
-  - One of the best configurations (~85% accuracy)  
-  - Fast, stable, balanced updates  
-
-- **Batch sizes 32 & 64**  
-  - Lower accuracy (<80%)  
-  - Slower convergence  
-
-- **Batch sizes 128 & 242**  
-  - Very slow and unstable  
-  - Model fails to learn effectively  
-
----
-
-# 🧪 Experiment Section 2 — Comparison of Four MLP Architectures
-
-Four different neural network configurations were trained & evaluated.
-
-### 📉 Validation Accuracy of 4 MLP Models
-![Validation Accuracy 4 Models](images/val_accuracy.png)
-
-### 📉 Validation Loss of 4 MLP Models
-![Validation Loss 4 Models](images/val_acc_loss.png)
-
----
-
-## 🔍 **Model-by-Model Summary**
-
-### **Model 1 — (SGD, 32 neurons)**
-- Best accuracy (~85%)
-- Fast and stable convergence  
-- Simple architecture with 1 hidden layer  
-
-### **Model 2 — (GD, 64–32 neurons)**
-- Slowest convergence  
-- Very low accuracy (~50%)
-- Deeper architecture does *not* match dataset → poor generalization  
-
-### **Model 3 — (GD, 16 neurons)**
-- Moderate performance (~75%)
-- Underfitting due to small hidden layer  
-
-### **Model 4 — (SGD, 32–16 neurons)**
-- Reasonable convergence  
-- Lower accuracy (~70%)  
-- Adding depth reduced performance  
-
----
-
-#  General Conclusions from Sections 1 & 2
-
-### ✔ Best Batch Sizes  
-`16` and `32` consistently outperform larger batches.
-
-### ✔ Best Architecture  
-Simple MLP with **one hidden layer** performs best.
-
-### ✔ Best Optimizer  
-**SGD** often works better than **GD** in this dataset.
-
-### ✔ More layers ≠ better  
-Extra hidden layers caused **overfitting** and reduced accuracy.
-
----
-
-# 🔬 Experiment Section 3 — GridSearchCV Optimization
-
-The following hyperparameters were searched:
-
-- Activation function  
-- Hidden layer sizes  
-- Neurons  
-- Batch size  
-- Optimizer  
-- Learning rate  
-- Epochs  
-
-###  **Best Parameters Found (Grid Search)**  
-
-
-### 📈 **Impact of Batch Size on Convergence Speed & Accuracy**
+###  **Impact of Batch Size on Convergence Speed & Accuracy**
 
 ![Batch Size Impact](images/batch_size_impact.png)
 
@@ -208,16 +119,105 @@ Four different neural network configurations were trained & evaluated.
 
 #  General Conclusions from Sections 1 & 2
 
-### ✔ Best Batch Sizes  
+###  Best Batch Sizes  
 `16` and `32` consistently outperform larger batches.
 
-### ✔ Best Architecture  
+###  Best Architecture  
 Simple MLP with **one hidden layer** performs best.
 
-### ✔ Best Optimizer  
+###  Best Optimizer  
 **SGD** often works better than **GD** in this dataset.
 
-### ✔ More layers ≠ better  
+###  More layers ≠ better  
+Extra hidden layers caused **overfitting** and reduced accuracy.
+
+---
+
+#  Experiment Section 3 — GridSearchCV Optimization
+
+The following hyperparameters were searched:
+
+- Activation function  
+- Hidden layer sizes  
+- Neurons  
+- Batch size  
+- Optimizer  
+- Learning rate  
+- Epochs  
+
+###  **Best Parameters Found (Grid Search)**  
+
+
+### **Impact of Batch Size on Convergence Speed & Accuracy**
+
+![Batch Size Impact](images/batch_size_impact.png)
+
+###  Key Findings:
+- **Batch size = 1**  
+  - Fastest convergence, accuracy reaches ~90% early  
+  - Highly unstable → prone to overfitting  
+
+- **Batch size = 16**  
+  - One of the best configurations (~85% accuracy)  
+  - Fast, stable, balanced updates  
+
+- **Batch sizes 32 & 64**  
+  - Lower accuracy (<80%)  
+  - Slower convergence  
+
+- **Batch sizes 128 & 242**  
+  - Very slow and unstable  
+  - Model fails to learn effectively  
+
+---
+
+#  Experiment Section 2 — Comparison of Four MLP Architectures
+
+Four different neural network configurations were trained & evaluated.
+
+###  Validation Accuracy of 4 MLP Models
+![Validation Accuracy 4 Models](images/val_accuracy.png)
+
+###  Validation Loss of 4 MLP Models
+![Validation Loss 4 Models](images/val_acc_loss.png)
+
+---
+
+##  **Model-by-Model Summary**
+
+### **Model 1 — (SGD, 32 neurons)**
+- Best accuracy (~85%)
+- Fast and stable convergence  
+- Simple architecture with 1 hidden layer  
+
+### **Model 2 — (GD, 64–32 neurons)**
+- Slowest convergence  
+- Very low accuracy (~50%)
+- Deeper architecture does *not* match dataset → poor generalization  
+
+### **Model 3 — (GD, 16 neurons)**
+- Moderate performance (~75%)
+- Underfitting due to small hidden layer  
+
+### **Model 4 — (SGD, 32–16 neurons)**
+- Reasonable convergence  
+- Lower accuracy (~70%)  
+- Adding depth reduced performance  
+
+---
+
+#  General Conclusions from Sections 1 & 2
+
+###  Best Batch Sizes  
+`16` and `32` consistently outperform larger batches.
+
+###  Best Architecture  
+Simple MLP with **one hidden layer** performs best.
+
+###  Best Optimizer  
+**SGD** often works better than **GD** in this dataset.
+
+###  More layers ≠ better  
 Extra hidden layers caused **overfitting** and reduced accuracy.
 
 ---
@@ -246,7 +246,7 @@ Optimizer: adam
 Best Accuracy: 0.8098 (~80.98%)
 
 
-### ✔ Interpretation
+###  Interpretation
 - **tanh** works better when data normalization matches its range  
 - Learning rate is slightly higher → faster convergence  
 - Architecture with 2 small layers performs well  
@@ -270,7 +270,8 @@ ReLU and Tanh both perform well depending on LR and architecture.
 
 ### 🔹 Recommendation  
 For further improvement:
-- Add **Dropout**  
+- Ad
+- d **Dropout**  
 - Add **Batch Normalization**  
 - Test deeper architectures with regularization  
 
