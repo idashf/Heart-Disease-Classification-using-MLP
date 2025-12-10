@@ -62,7 +62,7 @@ Batch sizes tested:
 
 ![Batch Size Impact](images/batch_size_impact.png)
 
-### ✔ Key Findings:
+###  Key Findings:
 - **Batch size = 1**  
   - Fastest convergence, accuracy reaches ~90% early  
   - Highly unstable → prone to overfitting  
